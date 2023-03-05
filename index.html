@@ -1,45 +1,130 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>佟明玉的个人网站</title>
-    <style>  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 布局</title>
+    <style>
       body {
         margin: 0;
+        height: 100vh;
+        background-color: rgb(244, 241, 241);
+      }
+      /* * {
+        border: 1px solid grey; */
+
+      .yinying {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .flex {
+        display: flex;
+      }
+      .baise {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daohang {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 14px;
+        color: #b0aaaa;
+      }
+      .qingzhu {
+        height: 90px;
+        width: 190px;
       }
     </style>
   </head>
-  <body>
-    <div style="
-    background-color:#f1f1f1;
-    text-align:center;
-    padding:40px
-    ">
-    <img src="https://i.328888.xyz/2023/02/12/cOElo.jpeg" alt="佟明玉" width="80px" height="80px">
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baise yinying">
+      <!-- 头像栏 -->
+      <div
+        class="flex"
+        style="
+          padding: 10px;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid #999;
+        "
+      >
+        <img src="个人网页头像.jpeg" height="50px" width="50px" />
+        <div style="margin-left: 10px">佟明玉</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+      </div>
     </div>
-    <div style="
-      max-wight:700px;
-      margin:30px auto;
-      padding:15px;
-      line-height:1.7;
-      color:blue;
-      font-size:18px">
-      <p>大家好，我是网络新手大雨</p>
-      <p>很高兴你们来到我的个人网站</p>
-      <p>未来的日子里希望大家共同见证我成长</p>
-      <p>谢谢大家</p>
-    </div>
-    <div style="
-      background-color:#f1f1f1;
-      text-align:center;
-      padding:40px
-      font-size:12px;
-      background-color:green;
-      ">
-      <a href="Hi.html">打开第二页</a>
-      <p>我的网站</p>
-      <a herf="https://www.midorg.com/">友情链接</a>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="baise yinying">
+        <p style="color: crimson">祝自己生日快乐，学习进步</p>
+      </div>
+      <!-- 内容区 -->
+      <div class="flex1 flex" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex">
+            <!-- 数据块 -->
+            <div style="height: 100px; flex: 1" class="baise yinying mgr8">
+              <img src="焰火.jpg" class="qingzhu" />
+            </div>
+            <div style="height: 100px; flex: 1" class="baise yinying mgr8">
+              <img src="生日蛋糕.jpg" class="qingzhu" />
+            </div>
+            <div style="height: 100px; flex: 1" class="baise yinying mgr8">
+              <img src="生日蛋糕.jpg" class="qingzhu" />
+            </div>
+            <div style="height: 100px; flex: 1" class="baise yinying mgr8">
+              <img src="焰火.jpg" class="qingzhu" />
+            </div>
+          </div>
+          <!-- 列表区 -->
+          <div class="column">
+            <!-- 列表项 -->
+            <div style="height: 160px" class="baise yinying mgt8">
+              <p>大家好，我是大雨</p>
+              <p>欢迎来到我的网站</p>
+              <p>未来我将和大家共同进步</p>
+            </div>
+            <div style="height: 160px" class="baise yinying mgt8"></div>
+            <div style="height: 160px" class="baise yinying mgt8"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baise yinying">
+            <p>哈喽</p>
+            <p>今天是你的生日 我的大雨</p>
+          </div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baise yinying mgt8"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
